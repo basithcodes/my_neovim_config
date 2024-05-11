@@ -11,6 +11,12 @@ return {
             return vim.fn.executable 'make' == 1
          end,
       },
+      {
+         "ThePrimeagen/git-worktree.nvim",
+         config = function()
+            require("git-worktree").setup {}
+         end,
+      },
    },
 
    config = function()
