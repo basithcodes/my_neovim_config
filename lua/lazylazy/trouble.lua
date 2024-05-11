@@ -1,3 +1,3 @@
 return {
-   {'folke/trouble.nvim', branch = "dev"},
+   { 'folke/trouble.nvim', branch = "dev" },
 }
