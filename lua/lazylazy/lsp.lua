@@ -5,19 +5,18 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'j-hui/fidget.nvim',
-      'folke/neodev.nvim',
-
-      'hrsh7th/nvim-cmp',
-      'L3MON4D3/LuaSnip',
+      {'folke/neodev.nvim', opts = {}},
+      {'hrsh7th/nvim-cmp', opts = {}},
+      {'L3MON4D3/LuaSnip', opts = {}},
       'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
+      {'hrsh7th/cmp-nvim-lsp', opts = {}},
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       --'rafamadriz/friendly-snippets',
    },
-
    config = function()
+      require("trouble").setup()
       require("fidget").setup({})
       require("mason").setup()
       require("mason-lspconfig").setup({
@@ -28,7 +27,6 @@ return {
             "vimls",
          },
       })
-
       local handlers = {
          function(server_name)
             -- print("setting up", server_name)
@@ -47,10 +45,9 @@ return {
                },
             }
          end,
-
-
       }
 
+      --require("mason-lspconfig").setup_handlers(handlers)
       require("mason-lspconfig").setup_handlers(handlers)
 
       local cmp = require('cmp')
@@ -88,9 +85,8 @@ return {
                { name = 'cmdline' },
             }
          ),
-         experimental = {
-            ghost_text = false,
-            native_menu = false
+         view = {
+            ghost_text = true,
          }
       })
    end

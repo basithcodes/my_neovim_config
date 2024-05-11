@@ -1,5 +1,5 @@
 require("globals")
 require("options")
 require("keymaps")
+--require("qml_lsp")
 require("lazy_init")
-require("qml_lsp")
