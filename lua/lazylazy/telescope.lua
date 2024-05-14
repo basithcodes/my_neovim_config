@@ -101,10 +101,10 @@ return {
                },
                path_display = {
                   "filename_first",
-                  shorten = {
-                     len = 3,
-                     exclude = { 1, -1 }
-                  },
+                  --shorten = {
+                  --   len = 3,
+                  --   exclude = { 1, -1 }
+                  --},
                },
             },
          })
