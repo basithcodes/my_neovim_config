@@ -5,11 +5,11 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'j-hui/fidget.nvim',
-      {'folke/neodev.nvim', opts = {}},
-      {'hrsh7th/nvim-cmp', opts = {}},
-      {'L3MON4D3/LuaSnip', opts = {}},
+      { 'folke/neodev.nvim', opts = {} },
+      { 'hrsh7th/nvim-cmp',  opts = {} },
+      { 'L3MON4D3/LuaSnip',  opts = {} },
       'saadparwaiz1/cmp_luasnip',
-      {'hrsh7th/cmp-nvim-lsp', opts = {}},
+      { 'hrsh7th/cmp-nvim-lsp', opts = {} },
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
@@ -53,11 +53,6 @@ return {
       local cmp = require('cmp')
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
       cmp.setup({
-         snippet = {
-            expand = function(args)
-               require('luasnip').lsp_expand(args.body)
-            end,
-         },
          window = {
             completion = cmp.config.window.bordered(),
             documentation = cmp.config.window.bordered(),
@@ -87,7 +82,12 @@ return {
          ),
          view = {
             ghost_text = true,
-         }
+         },
+         snippet = {
+            expand = function(args)
+               require('luasnip').lsp_expand(args.body)
+            end,
+         },
       })
    end
 }

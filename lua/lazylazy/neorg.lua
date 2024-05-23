@@ -27,7 +27,7 @@ return {
                   workspaces = {
                      notes = "~/Documents/notes",
                   },
-                  index = "~/Documents/notes/index.norg",
+                  index = "~/Documents/notes/home.norg",
                }
             }
          },
