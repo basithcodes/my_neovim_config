@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
    callback = function(ev)
       -- Enable completion triggered by <c-x><c-o>
-      --vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+      vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
       -- Buffer local mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -33,8 +33,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
             style = "minimal",
             border = "rounded",
             source = true,
-            header = "",
-            prefix = "",
          }
       })
 
@@ -51,7 +49,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
       vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
       vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-      --vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts) -- This is replaced by trouble plugin
       vim.keymap.set('n', '<space>f', function()
          vim.lsp.buf.format { async = true }
       end, opts)

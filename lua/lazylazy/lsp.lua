@@ -47,7 +47,6 @@ return {
          end,
       }
 
-      --require("mason-lspconfig").setup_handlers(handlers)
       require("mason-lspconfig").setup_handlers(handlers)
 
       local cmp = require('cmp')

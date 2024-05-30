@@ -16,6 +16,7 @@ return {
 
                },
             },
+            ["core.export"] = {},
             ["core.concealer"] = { -- Adds pretty icons to your document
                config = {
                   folds = false,
