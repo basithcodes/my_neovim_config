@@ -84,8 +84,11 @@ return {
          })
       end
 
+      local open_with_trouble = require("trouble.sources.telescope").open
+
       local basic_find_files = function()
          require("telescope").setup({
+
             defaults = {
                layout_strategy = "vertical",
                layout_config = {
@@ -101,11 +104,11 @@ return {
                },
                path_display = {
                   "filename_first",
-                  --shorten = {
-                  --   len = 3,
-                  --   exclude = { 1, -1 }
-                  --},
                },
+               mappings = {
+                  i = { ["<c-t>"] = open_with_trouble },
+                  n = { ["<c-t>"] = open_with_trouble },
+               }
             },
          })
          require("telescope.builtin").find_files()

@@ -20,11 +20,11 @@
 --   })
 --}
 
-local function is_it_a_workspace()
-   if vim.lsp.buf.list_workspace_folders() ~= nil then
-      print("hello")
-   end
-end
+-- local function is_it_a_workspace()
+--    if vim.lsp.buf.list_workspace_folders() ~= nil then
+--       print("hello")
+--    end
+-- end
 
 
 return {

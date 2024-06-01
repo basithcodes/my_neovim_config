@@ -15,7 +15,6 @@ vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.bug=0<
 vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix List (Toggle)" })
 vim.keymap.set("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location List (Toggle)" })
 vim.keymap.set("n", "gr", "<cmd>Trouble lsp_references<CR>", { desc = "Location List (Toggle)" })
-
 vim.api.nvim_create_autocmd('LspAttach', {
    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
    callback = function(ev)

@@ -70,6 +70,9 @@ return {
                { name = 'luasnip' },
             },
             {
+               { name = 'neorg' },
+            },
+            {
                { name = 'buffer' },
             },
             {

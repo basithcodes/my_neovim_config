@@ -2,18 +2,24 @@ return {
    "nvim-neorg/neorg",
    lazy = false,
    version = "*",
-   dependencies = {"luarocks.nvim"},
+   dependencies = { "luarocks.nvim" },
    config = function()
-      require("neorg").setup ({
+      require("neorg").setup({
          load = {
-            ["core.defaults"] = {
+            ["core.defaults"] = {},
+            ["core.completion"] = {
+               config = {
+                  engine = "nvim-cmp",
+               }
             },
+            ["core.integrations.image"] = {},
+            ["core.latex.renderer"] = {},
             ["core.autocommands"] = {},
+            ["core.integrations.nvim-cmp"] = {},
             ["core.integrations.treesitter"] = {
                config = {
                   configure_parsers = true,
                   install_parsers = true,
-
                },
             },
             ["core.export"] = {},
@@ -35,4 +41,3 @@ return {
       })
    end,
 }
-
