@@ -8,8 +8,8 @@ return {
       { 'folke/neodev.nvim', opts = {} },
       { 'hrsh7th/nvim-cmp',  opts = {} },
       { 'L3MON4D3/LuaSnip',  opts = {} },
-      'saadparwaiz1/cmp_luasnip',
       { 'hrsh7th/cmp-nvim-lsp', opts = {} },
+      'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
@@ -62,26 +62,14 @@ return {
             ['<CR>'] = cmp.mapping.confirm({ select = true }),
             ['C-Space'] = cmp.mapping.complete(),
          }),
-         sources = cmp.config.sources(
-            {
-               { name = 'nvim_lsp' },
-            },
-            {
-               { name = 'luasnip' },
-            },
-            {
-               { name = 'neorg' },
-            },
-            {
-               { name = 'buffer' },
-            },
-            {
-               { name = 'path' },
-            },
-            {
-               { name = 'cmdline' },
-            }
-         ),
+         sources = cmp.config.sources {
+            { name = 'nvim_lsp' },
+            { name = 'luasnip' },
+            { name = 'neorg' },
+            { name = 'buffer' },
+            { name = 'path' },
+            { name = 'cmdline' },
+         },
          view = {
             ghost_text = true,
          },
