@@ -34,3 +34,5 @@ vim.o.completeopt = 'menuone,noselect'
 
 vim.api.nvim_command('set conceallevel=3')
 
+vim.o.cmdheight = 2
+
