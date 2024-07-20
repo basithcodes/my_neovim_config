@@ -15,6 +15,18 @@ vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.bug=0<
 vim.keymap.set("n", "<leader>qq", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix List (Toggle)" })
 vim.keymap.set("n", "<leader>ll", "<cmd>Trouble loclist toggle<CR>", { desc = "Location List (Toggle)" })
 vim.keymap.set("n", "gr", "<cmd>Trouble lsp_references<CR>", { desc = "Location List (Toggle)" })
+
+-- Generate comment for current line
+vim.keymap.set('n', '<Leader>d', '<Plug>(doge-generate)')
+
+-- Interactive mode comment todo-jumping
+vim.keymap.set('n', '<TAB>', '<Plug>(doge-comment-jump-forward)')
+vim.keymap.set('n', '<S-TAB>', '<Plug>(doge-comment-jump-backward)')
+vim.keymap.set('i', '<TAB>', '<Plug>(doge-comment-jump-forward)')
+vim.keymap.set('i', '<S-TAB>', '<Plug>(doge-comment-jump-backward)')
+vim.keymap.set('x', '<TAB>', '<Plug>(doge-comment-jump-forward)')
+vim.keymap.set('x', '<S-TAB>', '<Plug>(doge-comment-jump-backward)')
+
 vim.api.nvim_create_autocmd('LspAttach', {
    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
    callback = function(ev)

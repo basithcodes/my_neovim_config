@@ -1,4 +1,3 @@
-
 return {
    "3rd/image.nvim",
    -- default config
